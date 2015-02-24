@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <bitset>
 #include <set>
+#include <stdint.h>
 /*
 typedef struct 
 {
@@ -78,24 +79,27 @@ printf("after   %s\n", str);
 
 
 //printf("%s", data);
-
-
-char myRnData[50];
+uint8_t myRnData[100];
 
 
     int rnData = open("/dev/urandom", O_RDONLY);
 
-    ssize_t res = read(rnData, &myRnData, sizeof (myRnData)) ;
-    if ( res < 0 )   exit(EXIT_FAILURE); 
-    
-   // myRnData[i] = rand%128;
+	for(int j= 0; j < 200 ; ++j){
+    	ssize_t res = read(rnData, &myRnData, sizeof (myRnData)) ;
+    	if ( res < 0 )   exit(EXIT_FAILURE); 
+		
+		for (int i=0 ; i<sizeof(myRnData) ; ++i){
+		myRnData[i] = (i == sizeof(myRnData)-1) ? '\0' : 32 + myRnData[i] % 90;
+		}
+    	
+		printf("before  %s\n", myRnData);
+		revert_words((char*)myRnData);
+		printf("after   %s\n", myRnData);
+	}
+
     close(rnData);
 
 
-for (int i=0 ; i<strlen(myRnData) ; ++i){
-    myRnData[i] = myRnData[i] % 128;
-    printf("###km:%u\n", myRnData[i]);
-}
 
 
 /*
