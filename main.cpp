@@ -7,14 +7,14 @@
 #include <bitset>
 #include <set>
 #include <stdint.h>
-/*
+
 typedef struct 
 {
     int a;
     char b;
 } MYSTRUCT;
 
-
+/*
 
 typedef int** handle; 
 
