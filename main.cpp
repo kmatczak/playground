@@ -7,6 +7,9 @@
 #include <bitset>
 #include <set>
 #include <stdint.h>
+#include <vector>
+#include <algorithm>
+
 
 typedef struct 
 {
@@ -65,9 +68,43 @@ void revert_words(char* ws){
 
 }
 
+using namespace std;
+
 int main(int argc, char** argv){
 
+//------------lambda----------------------------
+vector<int> v;
+v.push_back(1);
+v.push_back(2);
 
+for_each(v.begin(), v.end(), [] (int val){ cout << val ; } ) ;
+
+
+
+
+//auto func = [] () { std::cout << "Hello world"; };
+
+//func();
+
+//std::string name;
+//std::cin >> name ;
+
+//-----------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 //char* p = "QWER";
 char str[] = "QWER    12345 asdfghj lkjh4";
 char* p = str;
@@ -99,7 +136,7 @@ uint8_t myRnData[100];
 
     close(rnData);
 
-
+*/
 
 
 /*
