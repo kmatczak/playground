@@ -71,7 +71,7 @@ void revert_words(char* ws){
 using namespace std;
 
 int main(int argc, char** argv){
-
+/*
 //------------lambda----------------------------
 vector<int> v;
 v.push_back(1);
@@ -90,11 +90,35 @@ for_each(v.begin(), v.end(), [] (int val){ cout << val ; } ) ;
 //std::cin >> name ;
 
 //-----------------------------------------------
+*/
 
 
+//----------- double pointer play -----------
+
+int *p = (int*)malloc(sizeof(int)*4);
+int *q = p;
+
+*q = 56; 
+*(++q)=72;
+*(++q)=38;
+*(++q)=44;
+
+//int **pp  = &p;
+q=p;
+
+int **qq  = &q;
+
+for (int i =0; i<4 ; ++i){
+    
+  //  printf("%x\n", p[i]);
+  //  printf("%x\n", *pp[i]);
+    printf("%x  %d  |  %d \n", q+i, q[i],  *(*qq+i));
+    
+
+}
 
 
-
+//--------------------------------
 
 
 
