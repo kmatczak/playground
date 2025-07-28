@@ -1,0 +1,3 @@
+[submodule "blablab"]
+	path = blablab
+	url = git@github.com:kmatczak/blablab.git
